@@ -1,6 +1,7 @@
-import { UserButton } from "@clerk/nextjs";
+import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 
 export default function Example() {
@@ -9,7 +10,7 @@ export default function Example() {
 
       <nav className="absolute top-4 right-4">
 
-        <UserButton />
+        USER BUTTON
       </nav>
       {/* background affects the whole page */}
       <svg
@@ -42,15 +43,17 @@ export default function Example() {
             Realist combines advanced AI, detailed property data, and curated contractor networks to simplify your workflow and maximize client satisfaction.
           </p>
           <div className="mt-10 flex items-center gap-x-6">
-            <a
-              href="sign-in"
+            <div
+
               className="rounded-md bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600"
             >
-              Log In to Realist
-            </a>
-            <a href="sign-up" className="flex justify-center text-sm/6 font-semibold text-gray-900">
-              Register <span aria-hidden="true"><ChevronRightIcon /></span>
-            </a>
+              
+                <Link className="flex items-center" href="/sign-in">
+                  Sign In 
+                </Link>
+             
+            </div>
+            
           </div>
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">

@@ -1,3 +1,9 @@
-export default function Page() {
-    return <p>Dashboard Page</p>;
+import Navbar from "../components/Navbar";
+
+export default function Dashboard() {
+    return (
+        <div className="bg-white h-screen ">
+            <Navbar />
+        </div>
+    )
 }
