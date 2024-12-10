@@ -1,5 +1,3 @@
-import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
-import { ChevronRightIcon } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 
