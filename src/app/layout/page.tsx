@@ -1,5 +1,5 @@
-import { UserButton } from '@clerk/nextjs';
-import { Zap } from 'lucide-react';
+
+import { User, Zap } from 'lucide-react';
 import  * as React from 'react';
 
 interface LayoutProps {
@@ -11,7 +11,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     <div className="w-screen min-h-screen bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-400 to-emerald-400">
       <div className="flex justify-center items-center min-h-screen">
         <nav className="absolute top-4 right-4 ">
-          <UserButton />
+          <User/>
         </nav>
         {children}
       </div>
