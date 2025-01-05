@@ -1,9 +1,10 @@
 // /Users/stvlley/Desktop/realist-8-app/auth.ts
 
-import NextAuth from "next-auth"
+import NextAuth, { type DefaultSession } from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
-import FacebookProvider from "next-auth/providers/facebook"
+import GithubProvider from "next-auth/providers/github"
 import LinkedInProvider from "next-auth/providers/linkedin"
+import FacebookProvider from "next-auth/providers/facebook"
 import { DrizzleAdapter } from "@auth/drizzle-adapter"
 import { db } from "@/lib/db" // Adjust the path based on your project structure
 import Credentials from "next-auth/providers/credentials"
@@ -13,6 +14,25 @@ import bcrypt from "bcryptjs"
 import { getUserRoleById } from "./data/role"
 
 
+
+
+
+type ExtendedUser = DefaultSession["user"] & {
+  role: string
+  customField: string
+}
+
+declare module "next-auth" {
+  interface Session {
+    user: ExtendedUser
+    accessToken?: string // Add accessToken to Session
+  }
+
+  interface JWT {
+    role?: string
+    accessToken?: string // Add accessToken to JWT
+  }
+}
 
 export const { auth, signIn, signOut, handlers: {GET, POST} } = NextAuth({
   adapter: DrizzleAdapter(db),
@@ -48,9 +68,9 @@ export const { auth, signIn, signOut, handlers: {GET, POST} } = NextAuth({
       clientId: process.env.AUTH_GOOGLE_ID!,
       clientSecret: process.env.AUTH_GOOGLE_SECRET!,
     }),
-    FacebookProvider({
-      clientId: process.env.AUTH_FACEBOOK_ID!,
-      clientSecret: process.env.AUTH_FACEBOOK_SECRET!,
+    GithubProvider({
+      clientId: process.env.AUTH_GITHUB_ID!,
+      clientSecret: process.env.AUTH_GITHUB_SECRET!,
     }),
     LinkedInProvider({
       clientId: process.env.AUTH_LINKEDIN_ID!,
@@ -58,12 +78,25 @@ export const { auth, signIn, signOut, handlers: {GET, POST} } = NextAuth({
       // Optionally, customize scope or other options
       // authorization: { params: { scope: 'r_liteprofile r_emailaddress' } },
     }),
+    FacebookProvider({
+      clientId: process.env.AUTH_FACEBOOK_ID!,
+      clientSecret: process.env.AUTH_FACEBOOK_SECRET!,
+    }),
     
 
   ],
   callbacks: {
 
-  
+    async signIn({user}) {
+      const existingUser = await getUserById(user.id as string);
+
+      if ( !existingUser || !existingUser.emailVerified) {
+        // alert user to verify email
+        return false;
+      }
+
+      return true
+    },
    
     async session({ session, token }) {
 
@@ -73,28 +106,34 @@ export const { auth, signIn, signOut, handlers: {GET, POST} } = NextAuth({
       if (token.sub && session.user) {
         session.user.id = token.sub;
       }
+      if (token.role && session.user) {
+        session.user.role = token.role as string;
+        // session.user.customField = "This is a custom field";
+      }
 
       return session
     },
-    async jwt({ token}) {
-      if (!token.sub) return token;
+    async jwt({ token, user }) {
 
+      if (!token.sub) return token;
       const existingUser = await getUserById(token.sub);
       const userRole = await getUserRoleById(token.sub);
+      if (user && userRole) {
+        token.role = userRole; // Assuming user has a 'role' property
+      } else {
+        token.role = "agent"; // Default
+      }
+      
+
+      
+      
 
       if (!existingUser && !userRole) return token;
 
-      console.log({ 
-        fatbitch: userRole
-      }) // Assign the actual role name
+      
       return token;
     },
     
-  },
-  pages: {
-    signIn: '/auth/login', // Ensure this route exists
-    signOut: '/auth/logout', // Ensure this route exists
-    error: '/auth/error', // Ensure this route exists
-  },
+  }
 })
 

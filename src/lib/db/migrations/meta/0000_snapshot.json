@@ -1,5 +1,5 @@
 {
-  "id": "d845ff81-fc83-4c64-babd-995e207f3b44",
+  "id": "03ec1e17-6755-4dea-9f5e-bd96b567ea9e",
   "prevId": "00000000-0000-0000-0000-000000000000",
   "version": "7",
   "dialect": "postgresql",
@@ -125,8 +125,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.user_roles": {
-      "name": "user_roles",
+    "public.roles": {
+      "name": "roles",
       "schema": "",
       "columns": {
         "id": {
@@ -178,8 +178,8 @@
       "checkConstraints": {},
       "isRLSEnabled": false
     },
-    "public.user_roles_join": {
-      "name": "user_roles_join",
+    "public.user_roles": {
+      "name": "user_roles",
       "schema": "",
       "columns": {
         "id": {
@@ -211,9 +211,9 @@
       },
       "indexes": {},
       "foreignKeys": {
-        "user_roles_join_user_id_users_id_fk": {
-          "name": "user_roles_join_user_id_users_id_fk",
-          "tableFrom": "user_roles_join",
+        "user_roles_user_id_users_id_fk": {
+          "name": "user_roles_user_id_users_id_fk",
+          "tableFrom": "user_roles",
           "tableTo": "users",
           "columnsFrom": [
             "user_id"
@@ -224,10 +224,10 @@
           "onDelete": "cascade",
           "onUpdate": "no action"
         },
-        "user_roles_join_role_id_user_roles_id_fk": {
-          "name": "user_roles_join_role_id_user_roles_id_fk",
-          "tableFrom": "user_roles_join",
-          "tableTo": "user_roles",
+        "user_roles_role_id_roles_id_fk": {
+          "name": "user_roles_role_id_roles_id_fk",
+          "tableFrom": "user_roles",
+          "tableTo": "roles",
           "columnsFrom": [
             "role_id"
           ],
@@ -303,6 +303,70 @@
           "nullsNotDistinct": false,
           "columns": [
             "email"
+          ]
+        }
+      },
+      "policies": {},
+      "checkConstraints": {},
+      "isRLSEnabled": false
+    },
+    "public.verification_tokens": {
+      "name": "verification_tokens",
+      "schema": "",
+      "columns": {
+        "id": {
+          "name": "id",
+          "type": "uuid",
+          "primaryKey": false,
+          "notNull": false
+        },
+        "token": {
+          "name": "token",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expires": {
+          "name": "expires",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "email": {
+          "name": "email",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "created_at": {
+          "name": "created_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        },
+        "expires_at": {
+          "name": "expires_at",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {
+        "verification_tokens_id_pk": {
+          "name": "verification_tokens_id_pk",
+          "columns": [
+            "id"
+          ]
+        }
+      },
+      "uniqueConstraints": {
+        "verification_tokens_token_unique": {
+          "name": "verification_tokens_token_unique",
+          "nullsNotDistinct": false,
+          "columns": [
+            "token"
           ]
         }
       },

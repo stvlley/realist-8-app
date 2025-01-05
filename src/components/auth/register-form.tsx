@@ -29,6 +29,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select"
+import { signIn } from '@/../auth';
+import { DEFAULT_LOGIN_REDIRECT } from '../../../routes';
 
 
 
@@ -67,7 +69,7 @@ const RegisterForm = () => {
     }
   })
 
-  const onSubmit = (values: z.infer<typeof RegisterSchema>) => {
+  const onSubmit = async (values: z.infer<typeof RegisterSchema>) => {
 
     console.log("hello from client", values);
 
@@ -80,6 +82,7 @@ const RegisterForm = () => {
           setError(data.error);
           setSuccess(data.message);
         })
+        
     });
   }
 
@@ -88,7 +91,7 @@ const RegisterForm = () => {
       headerLabel='Register now to get started!'
       backButtonHref='/auth/login'
       backButtonLabel='Already have an account?'
-      showSocial
+      // showSocial
       register
     >
       <Form {...form}>

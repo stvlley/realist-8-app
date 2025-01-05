@@ -4,10 +4,14 @@ import * as z from "zod";
 import { RegisterSchema } from '@/../schemas';
 import bcrypt from "bcryptjs";
 import { db } from '@/lib/db';
-import { users, userRoles, userRolesJoin } from "@/lib/db/schema";
+import { users, userRoles, roles } from "@/lib/db/schema";
 import { eq } from 'drizzle-orm';
 import { randomUUID } from 'crypto';
 import { getUserByEmail } from "../data/user";
+
+
+
+
 
 export const register = async (values: any) => {
     // Validate the input data
@@ -21,8 +25,8 @@ export const register = async (values: any) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     // Check if the user already exists
-    const existingUser = await getUserByEmail(email);
-    if (existingUser?.rows.length > 0) {
+    const existingUserEmail = await getUserByEmail(email);
+    if (existingUserEmail) {
         return { error: "Email already in use!" };
     }
 
@@ -35,18 +39,18 @@ export const register = async (values: any) => {
             id: newUserId,
             name,
             email,
-            role: "user", // this is a systems based role, not the one we are inserting into user_roles
             password: hashedPassword
         });
 
         // Insert into the user_roles table
-        await db.insert(userRoles).values({
+        await db.insert(roles).values({
             id: newRoleId, // Generate a unique UUID for the user role
             name: role, // THIS IS THE ROLE WE ARE INSERTING
             description: "User role",
             is_system: false,
+
         });
-        await db.insert(userRolesJoin).values({
+        await db.insert(userRoles).values({
             id: randomUUID(), // Generate a unique UUID for the user role
             user_id: newUserId,
             role_id: newRoleId, // THIS IS THE ROLE WE ARE INSERTING

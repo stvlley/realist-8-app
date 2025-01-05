@@ -1,5 +1,5 @@
 
 export { users, usersRelations } from "./users";
-export { userRoles, rolesRelations } from "./userRoles";
-export { userRolesJoin, userRolesRelations } from "./userRolesJoin";
+export { roles, rolesRelations } from "./roles";
+export { userRoles, userRolesRelations } from "./userRoles";
 export { accounts } from './accounts';

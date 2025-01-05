@@ -35,7 +35,7 @@ export const CardWrapper = ({
                     <Social />
                 </CardFooter>
             )}
-            <Card className="border-none shadow-none">
+            <Card className="border-none mt-4 shadow-none">
                 <BackButton 
                 label={backButtonLabel}
                 href={backButtonHref}

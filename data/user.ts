@@ -1,6 +1,6 @@
 import { db } from '@/lib/db';
 import { users } from '@/lib/db/schema';
-import { eq, sql } from 'drizzle-orm';
+import { eq } from 'drizzle-orm';
 // import { users } from '@/lib/db/schema/users';
 // import { eq, sql } from 'drizzle-orm';
 

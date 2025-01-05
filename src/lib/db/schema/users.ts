@@ -1,6 +1,6 @@
 import { pgTable, uuid, varchar, timestamp } from "drizzle-orm/pg-core";
 import { relations, sql } from "drizzle-orm";
-import { userRolesJoin } from "./userRolesJoin"; // Corrected import path
+import { userRoles } from "./userRoles"; // Corrected import path
 
 export const users = pgTable(
   "users",
@@ -17,7 +17,7 @@ export const users = pgTable(
 
 // Define relations if necessary
 export const usersRelations = relations(users, ({ many }) => ({
-  userRoles: many(userRolesJoin),
+  userRoles: many(userRoles),
 }));
 
 export default users;
