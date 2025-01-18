@@ -6,27 +6,29 @@ import { Button } from "./ui/button";
 import { ChevronRight } from "lucide-react";
 import { LoginButton } from "./auth/login-button";
 
-export default function Example() {
+export default function LandingPage() {
   return (
     <div className="relative isolate overflow-hidden bg-white">
       {/* Updated Navbar */}
       <nav className="w-full fixed top-0 z-50 flex justify-center items-center bg-white shadow">
         <div className="max-w-7xl w-full flex justify-between items-center px-6">
           {/* Logo */}
-          <Image className="m-3" src="/slate-r-logo.svg" alt="Realist Logo" width={25} height={50} />
+          <Link href="/">
+            <Image className="m-3" src="/slate-r-logo.svg" alt="Realist Logo" width={25} height={50} />
+          </Link>
 
           {/* Navigation Links */}
           <ul className="flex space-x-6">
             <li>
-              <Link href="/dashboard" className="text-gray-700 hover:text-gray-900">
+              <Link href="/about" className="text-gray-700 hover:text-gray-900">
                 <Button variant="link">
                   About Us
                 </Button>
               </Link>
             </li>
             <li>
-              <Link href="/dashboard" className="text-gray-700 hover:text-gray-900">
-                <Button >
+              <Link href="/auth/login" className="text-gray-700 hover:text-gray-900">
+                <Button>
                   Sign In
                 </Button>
               </Link>
@@ -68,22 +70,17 @@ export default function Example() {
             Realist combines advanced AI, detailed property data, and curated contractor networks to simplify your workflow and maximize client satisfaction.
           </p>
           <div className="mt-10 flex items-center gap-x-6">
-            <div
-              className="rounded-md bg-cyan-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-cyan-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-600"
-            >
-              <LoginButton>
-                <Link className="flex items-center" href="/#">
-                  Sign In
-                </Link>
-              </LoginButton>
-            </div>
+            <LoginButton>
+              <Button className="bg-cyan-600 hover:bg-cyan-500">
+                Sign In
+              </Button>
+            </LoginButton>
 
-            <Link className="flex items-center" href="/#">
+            <Link href="/auth/register" className="flex items-center">
               <Button variant="link">
                 Register <span><ChevronRight /></span>
               </Button>
             </Link>
-
           </div>
         </div>
         <div className="mx-auto mt-16 flex max-w-2xl sm:mt-24 lg:ml-10 lg:mr-0 lg:mt-0 lg:max-w-none lg:flex-none xl:ml-32">
@@ -103,8 +100,6 @@ export default function Example() {
 
       <Banner />
       <Contact />
-
-
     </div>
   );
 }

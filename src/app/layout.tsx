@@ -1,24 +1,23 @@
-
-import { db } from '@/lib/db';
 import './globals.css'
-import {  users } from '@/lib/db/schema/users';
+import { Inter } from 'next/font/google'
 
-export default async function RootLayout({
+const inter = Inter({ subsets: ['latin'] })
+
+export const metadata = {
+  title: 'Realist',
+  description: 'Streamline Your Real Estate Workflow',
+}
+
+export default function RootLayout({
   children
 }: {
-  children:
-  React.ReactNode
+  children: React.ReactNode
 }) {
-
-  
-
   return (
-    <html lang="en">
-      <body>
-        <main>{children}</main>
+    <html lang="en" suppressHydrationWarning>
+      <body className={inter.className}>
+        {children}
       </body>
     </html>
   );
-
-
 }

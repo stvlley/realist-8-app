@@ -3,18 +3,21 @@ import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuIt
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
 import Image from 'next/image'
 import Link from 'next/link'
-import { signOut } from 'next-auth/react'
+// import { signOut } from 'next-auth/react'
 import { auth } from '../../auth'
 import { UserIcon } from 'lucide-react'
 // type Props = {}
 
 
 const navigation = [
-    { name: 'Dashboard', href: '#', current: true },
-    { name: 'Services', href: '#', current: false },
+    { name: 'Dashboard', href: '/dashboard', current: false },
+    { name: 'Services', href: '/services', current: false },
     { name: 'Reports', href: '#', current: false },
     { name: 'Listings', href: '#', current: false },
 ]
+
+
+
 
 function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(' ')
@@ -54,12 +57,23 @@ const Navbar = async () => {
                                         href={item.href}
                                         aria-current={item.current ? 'page' : undefined}
                                         className={classNames(
-                                            item.current ? 'bg-gray-800 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                                            item.current ? 'bg-primary text-white' : 'text-gray-300 hover:bg-primary/30 hover:text-white',
                                             'rounded-md px-3 py-2 text-sm font-medium',
                                         )}
                                     >
                                         {item.name}
                                     </a>
+                                    // how does it know which item is current because im on services page
+                                    // and it is not highlighted
+                                    // answer: it is not highlighted because the current property is set to false
+                                    // how do i set it to true
+                                    // answer: you can set it to true by changing the current property to true
+                                    // how do i know which item is current
+                                    // answer: you can know which item is current by checking the href property
+                                    // shouldnt this logic be handled by the router
+                                    // answer: yes, the router should handle this logic
+                                    // how do i make the router handle this logic
+                                    // answer: you can make the router handle this logic by using the useRouter hook
                                 ))}
                             </div>
                         </div>
@@ -77,10 +91,10 @@ const Navbar = async () => {
                         {/* Profile dropdown */}
                         <Menu as="div" className="relative ml-3">
                             <div>
-                                <MenuButton className="relative flex rounded-full bg-gray-800 text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
+                                <MenuButton className="relative flex rounded-full bg-primary text-sm focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800 focus:outline-hidden">
                                     <span className="absolute -inset-1.5" />
-                                    
-                                <UserIcon className="w-6 h-6 m-1 text-white" />
+
+                                    <UserIcon className="w-6 h-6 m-1 text-white" />
                                 </MenuButton>
                             </div>
                             <MenuItems
@@ -104,7 +118,7 @@ const Navbar = async () => {
                                     </a>
                                 </MenuItem>
                                 <MenuItem>
-                                <a
+                                    <a
                                         href="#"
                                         className="block px-4 py-2 text-sm text-gray-700 data-focus:bg-gray-100 data-focus:outline-hidden"
                                     >
