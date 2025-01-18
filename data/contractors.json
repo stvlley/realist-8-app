@@ -1,0 +1,379 @@
+{
+    "contractors": [
+      {
+        "id": 1,
+        "name": "Home Pro Renovations",
+        "services": ["Plumbing", "Electrical", "HVAC", "General Contracting"],
+        "location": {
+          "city": "San Francisco",
+          "state": "CA",
+          "zip": "94103"
+        },
+        "rating": 4.8,
+        "reviews": 124,
+        "contact": {
+          "email": "info@homeprorenovations.com",
+          "phone": "(415) 555-1234",
+          "website": "https://homeprorenovations.com"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Quick Fix Contractors",
+        "services": ["Roofing", "Flooring", "Painting"],
+        "location": {
+          "city": "Austin",
+          "state": "TX",
+          "zip": "78701"
+        },
+        "rating": 4.23,
+        "reviews": 87,
+        "contact": {
+          "email": "support@quickfix.com",
+          "phone": "(512) 555-6789",
+          "website": "https://quickfix.com"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Eco Builders",
+        "services": ["Green Building", "Solar Panel Installation", "Energy Audits"],
+        "location": {
+          "city": "Seattle",
+          "state": "WA",
+          "zip": "98109"
+        },
+        "rating": 4.9,
+        "reviews": 200,
+        "contact": {
+          "email": "contact@ecobuilders.com",
+          "phone": "(206) 555-9876",
+          "website": "https://ecobuilders.com"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Reliable Handyman Services",
+        "services": ["Handyman", "Carpentry", "Drywall Installation"],
+        "location": {
+          "city": "Denver",
+          "state": "CO",
+          "zip": "80202"
+        },
+        "rating": 4.6,
+        "reviews": 95,
+        "contact": {
+          "email": "help@reliablehandyman.com",
+          "phone": "(303) 555-2345",
+          "website": "https://reliablehandyman.com"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 7,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 8,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 9,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 10,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 11,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 12,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 13,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 14,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 15,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 16,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 17,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 18,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 19,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 20,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 21,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      },
+      {
+        "id": 22,
+        "name": "Precision Landscaping",
+        "services": ["Landscaping", "Deck Building", "Irrigation Systems"],
+        "location": {
+          "city": "Orlando",
+          "state": "FL",
+          "zip": "32801"
+        },
+        "rating": 4.7,
+        "reviews": 112,
+        "contact": {
+          "email": "sales@precisionlandscaping.com",
+          "phone": "(407) 555-5678",
+          "website": "https://precisionlandscaping.com"
+        }
+      }
+    ]
+  }
+  

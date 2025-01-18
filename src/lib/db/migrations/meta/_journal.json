@@ -8,6 +8,27 @@
       "when": 1736045638835,
       "tag": "0000_strong_mastermind",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1736824918766,
+      "tag": "0001_tricky_stone_men",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1736828879424,
+      "tag": "0002_motionless_wolverine",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1737227171386,
+      "tag": "0003_colossal_scorpion",
+      "breakpoints": true
     }
   ]
 }

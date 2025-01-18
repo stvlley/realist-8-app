@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as z from 'zod';
@@ -47,9 +46,14 @@ const LoginForm = () => {
     startTransition(() => {
       login(values)
       .then((data) => {
-        setError(data.error);
-        setSuccess(data.message);
+        if (data) {
+          setError(data.error);
+          setSuccess(!data.error ? "Logged in successfully!" : undefined);
+        }
       })
+      .catch(() => {
+        setError("Something went wrong");
+      });
     });
   }
 

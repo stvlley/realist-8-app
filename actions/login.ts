@@ -31,7 +31,8 @@ export const login = async (values: any) => {
                     console.log(validatedFields.data)
                     return { error: "Invalid credentials!" };
                 default:
-                    return { error: "Login failed. Please try again." };
+                    console.log(validatedFields.data)
+                    return { error: "Login failed. Please try again."};
             }
         }
         throw error;

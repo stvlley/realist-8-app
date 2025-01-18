@@ -8,6 +8,7 @@ import { users, userRoles, roles } from "@/lib/db/schema";
 import { eq } from 'drizzle-orm';
 import { randomUUID } from 'crypto';
 import { getUserByEmail } from "../data/user";
+import { generateVerificationToken } from "@/lib/tokens";
 
 
 
@@ -56,7 +57,10 @@ export const register = async (values: any) => {
             role_id: newRoleId, // THIS IS THE ROLE WE ARE INSERTING
         });
 
-        // TODO: Implement verification email flow here
+       
+        const verificationToken = await generateVerificationToken(email)
+        console.log(verificationToken)
+         // TODO: send verification token
 
         return { message: "User created successfully!" };
     } catch (error: any) {
