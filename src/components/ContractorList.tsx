@@ -42,9 +42,23 @@ export default function ContractorsList({ contractors }: { contractors: Contract
         className="overflow-y-auto max-h-[calc(100vh-14.2rem)] sm:max-h-[calc(100vh-5rem)]"
         style={{ WebkitOverflowScrolling: 'touch' }}
       >
+         <div className="flex items-center bg-white/50 border-none rounded-md justify-between border-t border-gray-200 bg-white px-4 py-3 sm:px-6">
+      
+        <div className="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+          <div>
+            <input type="search" className=''/>
+          </div>
+          <div>
+            
+          </div>
+        </div>
+        </div>
+
+
+        {/* CARDS */}
         <ul
           role="list"
-          className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 mb-4"
+          className="grid mt-4 grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3 mb-4"
         >
           {currentContractors.map((contractor) => (
             <li

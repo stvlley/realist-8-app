@@ -90,10 +90,10 @@ export const { auth, signIn, signOut, handlers: {GET, POST} } = NextAuth({
     async signIn({user}) {
       const existingUser = await getUserById(user.id as string);
 
-      if ( !existingUser || !existingUser.emailVerified) {
-        // alert user to verify email
-        return false;
-      }
+      // if ( !existingUser || !existingUser.emailVerified) {
+      //   // alert user to verify email
+      //   return false;
+      // }
 
       return true
     },
